@@ -3,6 +3,9 @@ import React from "react";
 export default function Logo({
   width = 64,
   height = 64,
+}: {
+  width: number;
+  height: number;
 }) {
   return (
     <svg

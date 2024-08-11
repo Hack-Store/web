@@ -7,3 +7,15 @@
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .button {
+    @apply flex gap-1 items-center rounded-lg py-2.5 px-3.5 disabled:opacity-70 transition duration-150 ease-[ease]
+  }
+  .button.outline-button {
+    @apply ring-1 ring-zinc-800 dark:hover:bg-zinc-800 text-white
+  }
+  .button.primary-button {
+    @apply dark:bg-hs-500 dark:hover:bg-hs-600 text-white
+  }
+}
