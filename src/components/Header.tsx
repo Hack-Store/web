@@ -63,10 +63,10 @@ export default function Header() {
               <a
                 key={item}
                 href={`#${item}`}
-                className={`h-8 leading-8 text-black rounded-lg dark:hover:bg-zinc-800 transition duration-2000 ease align-middle capitalize dark:text-white px-2 ${
+                className={`h-8 leading-8 text-black rounded-lg transition duration-2000 ease align-middle capitalize dark:text-white px-2 ${
                   item === currentTab
                     ? "bg-hs-500 text-white dark:hover:bg-hs-500"
-                    : ""
+                    : "dark:hover:bg-zinc-800"
                 }`}
               >
                 <span>{item}</span>
