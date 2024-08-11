@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <a href="https://youtube.com/@HackStore" title="YouTube">
+          <a href="https://youtube.com/@HackStoreDev" title="YouTube">
             <svg
               className="size-10 fill-inherit dark:hover:fill-zinc-200 transition duration-200 ease"
               viewBox="0 0 32 32"
