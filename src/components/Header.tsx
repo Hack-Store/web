@@ -3,10 +3,10 @@ import Logo from "@/components/Logo";
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-between items-center gap-8 px-4 border-b border-zinc-800 ">
+    <header className="w-full flex justify-between items-center gap-3 px-4 border-b border-zinc-800">
       <Logo width={64} height={64} />
       <div className="flex gap-3">
-        <form action="">
+        <form action="#">
           <label
             className="flex items-center px-3 gap-2 rounded-full ring-1 dark:ring-zinc-800 focus-visible:ring-hs-500 w-full max-w-sm"
             htmlFor="search"
@@ -14,6 +14,7 @@ export default function Header() {
             <input
               type="text"
               id="search"
+              name="search"
               placeholder="Search"
               autoComplete="off"
               className="peer w-full p-2 rounded-md dark:placeholder-zinc-400 flex-1 appearance-none bg-transparent outline-none"
@@ -73,7 +74,7 @@ export default function Header() {
             );
           })}
         </nav>
-        <div className="flex gap-3">
+        <div className="gap-3 hidden sm:flex">
           <button onClick={function() {}} className="button outline-button">
             Sign in
           </button>
