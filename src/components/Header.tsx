@@ -3,12 +3,12 @@ import Logo from "@/components/Logo";
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-between items-center gap-3 px-4 border-b border-zinc-800">
+    <header className="select-none w-full flex justify-between items-center gap-3 px-4 border-b border-zinc-800">
       <Logo width={64} height={64} />
       <div className="flex gap-3">
         <form action="#">
           <label
-            className="flex items-center px-3 gap-2 rounded-full ring-1 dark:ring-zinc-800 focus-visible:ring-hs-500 w-full max-w-sm"
+            className="flex items-center px-3 gap-2 rounded-full ring-1 dark:ring-zinc-800 dark:focus-within:ring-zinc-700 w-full max-w-sm"
             htmlFor="search"
           >
             <input
