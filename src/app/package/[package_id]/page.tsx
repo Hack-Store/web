@@ -3,6 +3,7 @@ import AppList from "@/components/AppList";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ParagraphSection from "@/components/ParagraphSection";
+import ReviewItem from "@/components/ReviewItem";
 
 // Temperoraly added for static generation
 // TODO: Remove this later
@@ -40,7 +41,42 @@ export default function Package({
             Nothing New. come back later lol
           </ParagraphSection>
           <ParagraphSection title="Reviews">
-            No Reviews. Be the first one to review this app.
+            <div className="flex flex-col gap-8">
+              <ReviewItem name="Jane Doe" createdAt={new Date()} ratings={4.5}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                eveniet, animi omnis ipsa expedita quis est mollitia velit iure
+                molestiae. Quisquam placeat officia atque asperiores qui ab
+                dolorum ut! Neque.
+              </ReviewItem>
+              <ReviewItem name="John Doe" createdAt={new Date()} ratings={5}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                eveniet, animi omnis ipsa expedita quis est mollitia velit iure
+                molestiae. Quisquam placeat officia atque asperiores qui ab
+                dolorum ut! Neque.
+              </ReviewItem>
+              <ReviewItem name="Jane Doe" createdAt={new Date()} ratings={2.5}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                eveniet, animi omnis ipsa expedita quis est mollitia velit iure
+                molestiae. Quisquam placeat officia atque asperiores qui ab
+                dolorum ut! Neque.
+              </ReviewItem>
+            </div>
+            <button className="dark:text-hs-400 flex items-center gap-2 mt-3">
+              <span>See All Reviews</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                className="size-4 stroke-current"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </button>
           </ParagraphSection>
         </section>
         <aside className="lg:pt-32">
