@@ -16,6 +16,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Deploy to Nest
         run: |
-          curl -X POST -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" ${{ secrets.DEPLOY_API }} >> $GITHUB_OUTPUT
+          curl -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" ${{ secrets.DEPLOY_API }} >> $GITHUB_OUTPUT
 
         
