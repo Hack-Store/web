@@ -2,6 +2,7 @@ import AppItemCard from "@/components/AppItemCard";
 import AppList from "@/components/AppList";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ParagraphSection from "@/components/ParagraphSection";
 
 // Temperoraly added for static generation
 // TODO: Remove this later
@@ -25,10 +26,25 @@ export default function Package({
   return (
     <>
       <Header />
-      <main className="min-h-screen pb-12 flex flex-col md:flex-row">
-        <section className="flex-1"></section>
-        <aside>
-          <AppList className="md:flex-col md:mt-36">
+      <main className="min-h-screen pb-12 flex flex-col lg:flex-row">
+        <section className="flex-1">
+          <ParagraphSection title="About">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+              voluptatum, quod voluptate tenetur odio non velit quos nam totam
+              hic natus quidem dicta eaque? Necessitatibus officiis sint enim
+              fugiat minus.
+            </p>
+          </ParagraphSection>
+          <ParagraphSection title="What's New">
+            Nothing New. come back later lol
+          </ParagraphSection>
+          <ParagraphSection title="Reviews">
+            No Reviews. Be the first one to review this app.
+          </ParagraphSection>
+        </section>
+        <aside className="lg:pt-32">
+          <AppList title="Similar Apps" className="lg:flex-col">
             {Array(5)
               .fill(0)
               .map((_, i) => (
