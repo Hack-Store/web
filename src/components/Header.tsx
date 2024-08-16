@@ -1,5 +1,6 @@
 "use client";
 import Logo from "@/components/Logo";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -74,6 +75,7 @@ export default function Header() {
             );
           })}
         </nav>
+        {/* TODO: add auth logic to hide buttons and show profile picture */}
         <div className="gap-3 hidden sm:flex">
           <button onClick={function() {}} className="button outline-button">
             Sign in
@@ -82,6 +84,13 @@ export default function Header() {
             Register
           </button>
         </div>
+        <Image
+          src="/placeholder.svg"
+          className="rounded-full ring-1 ring-zinc-900 w-11 h-11 aspect-square"
+          width={32}
+          height={32}
+          alt="Avatar"
+        />
       </div>
     </header>
   );

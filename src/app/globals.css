@@ -21,4 +21,9 @@
   .brand-link {
     @apply dark:hover:text-zinc-50 dark:text-zinc-400;
   }
+  /* no scrollbars */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }

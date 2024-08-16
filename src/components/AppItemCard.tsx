@@ -1,24 +1,29 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AppItemCard({
   src,
   name,
   ratings,
+  href,
 }: {
   src: string;
   name: string;
   ratings: number;
+  href: string;
 }) {
   return (
-    <div className="flex flex-col gap-1">
+    <Link className="flex flex-col gap-1" href={href}>
       <div className="relative w-40 aspect-square rounded-xl dark:bg-zinc-800">
-        <Image src={src} fill={true} alt={name} className=""></Image>
+        <Image src={src} fill={true} alt={name} className="rounded-xl"></Image>
       </div>
       <div className="flex flex-col gap-0.5">
         <h3 className="text-base font-medium truncate">{name}</h3>
         <div className="flex gap-1 items-center">
-          <span className="text-sm leading-4 dark:text-zinc-200">{ratings}</span>
+          <span className="text-sm leading-4 dark:text-zinc-200">
+            {ratings}
+          </span>
           <svg
             viewBox="0 0 12 13"
             className="size-4 dark:fill-zinc-200"
@@ -28,6 +33,6 @@ export default function AppItemCard({
           </svg>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
