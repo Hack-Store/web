@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: process.env.GITHUB_PAGES ? "/web" : "/", // Github Pages
+  // Github Pages
+  basePath: process.env.GITHUB_PAGES ? "/web" : undefined,
+  assetPrefix: process.env.GITHUB_PAGES ? "/web/" : undefined,
 };
 
 export default nextConfig;
