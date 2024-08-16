@@ -1,0 +1,21 @@
+name: Deploy to Nest
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+  
+jobs:
+  deploy:
+    environment:
+      name: nest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to Nest
+        run: |
+          curl -X POST -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" ${{ secrets.DEPLOY_API }} >> $GITHUB_OUTPUT
+
+        
