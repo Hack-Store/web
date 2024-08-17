@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
-        uses: arnav-kr/nest-deploy@0.0.1
+        uses: arnav-kr/nest-deploy@1.0.0
         with:
           deployUrl: ${{ secrets.DEPLOY_URL }}
           deployToken: ${{ secrets.DEPLOY_TOKEN }}
