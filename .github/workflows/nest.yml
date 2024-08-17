@@ -12,10 +12,10 @@ jobs:
       name: nest
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Deploy to Nest
-        run: |
-          curl -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" ${{ secrets.DEPLOY_API }} >> $GITHUB_OUTPUT
+      - name: Deploy
+        uses: arnav-kr/nest-deploy@0.0.1
+        with:
+          deployUrl: ${{ secrets.DEPLOY_URL }}
+          deployToken: ${{ secrets.DEPLOY_TOKEN }}
 
         
