@@ -31,7 +31,7 @@ export default function ReviewItem({
               </span>
               <span>•</span>
               <span className="text-sm dark:text-zinc-400">
-                {Intl.DateTimeFormat("en-US", {
+                {new Intl.DateTimeFormat("en-US", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",

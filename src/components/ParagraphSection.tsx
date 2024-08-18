@@ -11,7 +11,7 @@ export default function ParagraphSection({
     <section className="mx-6 md:mx-16 pt-10 max-w-md">
       <h2 className="flex gap-1 items-center mb-4">
         <span className="text-xxl font-medium">{title}</span>
-        <button className="group rounded-full p-2  dark:hover:bg-zinc-900 transition duration-200 ease">
+        <button className="group rounded-full p-2 dark:hover:bg-zinc-900 transition duration-200 ease">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
