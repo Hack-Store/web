@@ -1,11 +1,14 @@
 "use client";
 import Logo from "@/components/Logo";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="select-none w-full flex justify-between items-center gap-3 px-4 border-b border-zinc-800">
-      <Logo width={64} height={64} />
+      <Link href="/">
+        <Logo width={64} height={64} />
+      </Link>
       <div className="flex gap-3">
         <form action="#">
           <label
