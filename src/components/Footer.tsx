@@ -144,7 +144,7 @@ export default function Footer() {
               Documentation
             </Link>
             <Link href="/f-droid" className="brand-link">
-              F-droid Repo
+              F-Droid Repo
             </Link>
           </nav>
         </section>
