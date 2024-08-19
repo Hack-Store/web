@@ -1,3 +1,4 @@
+import AppInfo from "@/components/AppInfo";
 import AppItemCard from "@/components/AppItemCard";
 import AppList from "@/components/AppList";
 import Chip from "@/components/Chip";
@@ -64,33 +65,19 @@ export default function Package({
       },
     ],
     downloads: 1000000,
-    developer: "John Doe",
+    developer: {
+      name: "John Doe",
+      url: "/developers/john-doe"
+    },
   };
   return (
     <>
       <Header />
       <main className="min-h-screen pb-12 flex flex-col lg:flex-row">
         <section className="flex-1">
-          <div className="mx-6 md:mx-16 pt-10 max-w-md flex flex-col gap-4">
-            <div className="flex gap-2 items-center">
-              {appMetadata.categories.map((category) => (
-                <Chip
-                  key={category}
-                  href={`/categories/${category.replace(/\s+/g, "-")}`}
-                >
-                  {category}
-                </Chip>
-              ))}
-              <span>•</span>
-              {/* convert in redable format */}
-              <span>
-                {new Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                  appMetadata.ratings.count
-                )}{" "}
-                Downloads
-              </span>
-            </div>
-            <div className="flex gap-3">
+          <div className="mx-6 md:mx-16 pt-10 max-w-lg flex flex-col gap-4">
+            <AppInfo metadata={appMetadata} />
+            <div className="flex gap-3 items-center mt-2">
               <a
                 href={`/download/${appMetadata.id}/${appMetadata.platform}`}
                 className="button primary-button"

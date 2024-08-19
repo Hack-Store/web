@@ -1,16 +1,16 @@
 import React from "react";
 
 export default function Ratings({
-  ratings,
+  value,
   width,
   height = 12,
 }: {
-  ratings: number;
+  value: number;
   width?: number;
   height: number;
 }) {
-  if (ratings > 5) ratings = 5;
-  if (ratings < 0) ratings = 0;
+  if (value > 5) value = 5;
+  if (value < 0) value = 0;
   return (
     <svg
       width={width}
@@ -102,7 +102,7 @@ export default function Ratings({
       {/* value slider */}
       <g mask="url(#mask0_147_1321)">
         <rect
-          width={(ratings / 5) * 60 + Math.floor(ratings) * 4}
+          width={(value / 5) * 60 + Math.floor(value) * 4}
           height="12"
           className="dark:fill-hs-500"
         />

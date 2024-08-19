@@ -26,11 +26,11 @@ export default function ReviewItem({
           />
           <div>
             <div className="flex items-center gap-1 leading-[14px] mt-[-6px]">
-              <span className="font-medium text-base dark:text-zinc-50">
+              <span className="truncate font-medium text-base dark:text-zinc-50">
                 {name}
               </span>
               <span>•</span>
-              <span className="text-sm dark:text-zinc-400">
+              <span className="text-sm dark:text-zinc-400 w-max">
                 {new Intl.DateTimeFormat("en-US", {
                   month: "short",
                   day: "numeric",
@@ -38,7 +38,7 @@ export default function ReviewItem({
                 }).format(createdAt)}
               </span>
             </div>
-            <Ratings ratings={ratings} height={12} />
+            <Ratings value={ratings} height={12} />
           </div>
         </div>
         <p className="text-base dark:text-zinc-50">

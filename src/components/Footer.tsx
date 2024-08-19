@@ -73,7 +73,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <a href="https://instagram.com/hackstore" title="Instagram">
+          <a href="https://instagram.com/HackStoreDev" title="Instagram">
             <svg
               className="size-10 fill-inherit dark:hover:fill-zinc-200 transition duration-200 ease"
               viewBox="0 0 32 32"
@@ -91,7 +91,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <a href="https://twitter.com/hackstore" title="Twitter">
+          <a href="https://twitter.com/HackStoreDev" title="Twitter">
             <svg
               className="size-10 fill-inherit dark:hover:fill-zinc-200 transition duration-200 ease"
               viewBox="0 0 32 32"
@@ -104,7 +104,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <a href="https://medium.com/hackstore" title="Medium">
+          <a href="https://medium.com/HackStoreDev" title="Medium">
             <svg
               className="size-10 fill-inherit dark:hover:fill-zinc-200 transition duration-200 ease"
               viewBox="0 0 32 32"
@@ -144,7 +144,7 @@ export default function Footer() {
               Documentation
             </Link>
             <Link href="/f-droid" className="brand-link">
-              F-droid Repo
+              F-Droid Repo
             </Link>
           </nav>
         </section>
