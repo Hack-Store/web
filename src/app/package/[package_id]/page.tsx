@@ -1,11 +1,13 @@
 import AppInfo from "@/components/AppInfo";
 import AppItemCard from "@/components/AppItemCard";
 import AppList from "@/components/AppList";
-import Chip from "@/components/Chip";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ParagraphSection from "@/components/ParagraphSection";
 import ReviewItem from "@/components/ReviewItem";
+import { ScreenshotCarousel } from "@/components/ScreenshotCarousel";
+import { formatBytes } from "@/lib/utils";
+import { Platform, ScreenshotSize } from "@/types/AppMetadata";
 
 // Temperoraly added for static generation
 // TODO: Remove this later
@@ -30,11 +32,28 @@ export default function Package({
   let appMetadata = {
     name: "My Cool App",
     id: "com.mycoolapp",
-    platform: "android",
+    size: 10000,
+    platform: Platform.ANDROID,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet, animi omnis ipsa expedita quis est mollitia velit iure molestiae. Quisquam placeat officia atque asperiores qui ab dolorum ut! Neque.",
     changelog: "Nothing New. come back later lol",
-    screenshots: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    screenshots: [
+      {
+        url: "/placeholder.svg",
+        caption: "Screenshot 1",
+        type: ScreenshotSize.Wide,
+      },
+      {
+        url: "/placeholder.svg",
+        caption: "Screenshot 2",
+        type: ScreenshotSize.Wide,
+      },
+      {
+        url: "/placeholder.svg",
+        caption: "Screenshot 3",
+        type: ScreenshotSize.Wide,
+      },
+    ],
     icon: "/placeholder.svg",
     categories: ["Developer Tools", "Utilities"],
     ratings: {
@@ -64,10 +83,10 @@ export default function Package({
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet, animi omnis ipsa expedita quis est mollitia velit iure molestiae. Quisquam placeat officia atque asperiores qui ab dolorum ut! Neque.",
       },
     ],
-    downloads: 1000000,
+    downloads: 1000,
     developer: {
       name: "John Doe",
-      url: "/developers/john-doe"
+      url: "/developers/john-doe",
     },
   };
   return (
@@ -82,7 +101,12 @@ export default function Package({
                 href={`/download/${appMetadata.id}/${appMetadata.platform}`}
                 className="button primary-button"
               >
-                Download
+                Download{" "}
+                <span className="text-sm dark:text-zinc-200">
+                  {"("}
+                  {formatBytes(appMetadata.size * 1000)}
+                  {")"}
+                </span>
               </a>
               <button className="group h-fit rounded-full p-2 dark:hover:bg-zinc-900 transition duration-200 ease">
                 <svg
@@ -104,6 +128,7 @@ export default function Package({
               </button>
             </div>
           </div>
+          <ScreenshotCarousel screenshots={appMetadata.screenshots} />
           <ParagraphSection title="About">
             <p>{appMetadata.description}</p>
           </ParagraphSection>

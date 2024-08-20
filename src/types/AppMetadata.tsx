@@ -3,14 +3,15 @@
 export default interface AppMetadata {
   name: string;
   id: string;
-  platform: string;
+  platform: Platform;
+  size: number;
   description: string;
   changelog: string;
-  screenshots: string[];
+  screenshots: Screenshot[];
   icon: string;
   categories: string[];
   ratings: Rating;
-  reviews: Review[];
+  reviews: Review[] | [];
   downloads: number;
   developer: Developer;
 }
@@ -30,4 +31,21 @@ export type Rating = {
 export type Developer = {
   name: string;
   url: string;
+};
+
+export type Screenshot = {
+  url: string;
+  caption?: string;
+  type: ScreenshotSize;
+};
+
+export enum ScreenshotSize {
+  Narrow = "narrow",
+  Wide = "wide",
+}
+
+export enum Platform {
+  ANDROID = "android",
+  IOS = "ios",
+  WEB = "web",
 }
