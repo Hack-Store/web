@@ -9,18 +9,6 @@ import { ScreenshotCarousel } from "@/components/ScreenshotCarousel";
 import { formatBytes } from "@/lib/utils";
 import { Platform, ScreenshotSize } from "@/types/AppMetadata";
 
-// Temperoraly added for static generation
-// TODO: Remove this later
-export async function generateStaticParams(): Promise<
-  [{ package_id: string }]
-> {
-  return [
-    {
-      package_id: "com.mycoolapp",
-    },
-  ];
-}
-
 export default function Package({
   params,
 }: {
@@ -51,6 +39,11 @@ export default function Package({
       {
         url: "/placeholder.svg",
         caption: "Screenshot 3",
+        type: ScreenshotSize.Wide,
+      },
+      {
+        url: "/placeholder.svg",
+        caption: "Screenshot 4",
         type: ScreenshotSize.Wide,
       },
     ],
