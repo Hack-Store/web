@@ -31,4 +31,4 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## License
-This project is licensed under the AGPL-3.0 License - see the [LICENSE](https://github.com/hack-store/web/raw/main/LICENSE) file for details.
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](https://github.com/Hack-Store/web/blob/main/LICENSE) file for details.
