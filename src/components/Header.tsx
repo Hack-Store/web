@@ -10,7 +10,7 @@ export default function Header() {
         <Logo width={64} height={64} />
       </Link>
       <div className="flex gap-3">
-        <form action="#">
+        <form action="/">
           <label
             className="flex items-center px-3 gap-2 rounded-full ring-1 dark:ring-zinc-800 dark:focus-within:ring-zinc-700 w-full max-w-sm"
             htmlFor="search"
@@ -66,7 +66,7 @@ export default function Header() {
             return (
               <a
                 key={item}
-                href={`#${item}`}
+                href={`/#${item}`}
                 className={`h-8 leading-8 text-black rounded-lg transition duration-2000 ease align-middle capitalize dark:text-white px-2 ${
                   item === currentTab
                     ? "bg-hs-500 text-white dark:hover:bg-hs-500"
