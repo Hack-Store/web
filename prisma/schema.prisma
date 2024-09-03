@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  email     String   @unique
+  name      String?
+  avatarUrl String?
+  reviews   Review[]
+  apps      App[]
+}
+
+model Review {
+  id         String   @id @default(uuid())
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @updatedAt
+  title      String
+  content    String?
+  rating     Float
+  author     User     @relation(fields: [userId], references: [id])
+  userId     String
+  app        App      @relation(fields: [appId], references: [id])
+  appId      Int
+}
+
+model App {
+  id          Int          @id @default(autoincrement())
+  name        String
+  description String?      @default("") @db.VarChar(1024)
+  changeLog   String?      @default("") @db.VarChar(1024)
+  categories  String[]     @default([])
+  downloads   Int          @default(0)
+  sourceCode  String?      @default("")
+  website     String?      @default("")
+  iconUrl     String
+  reviews     Review[]
+  author      User         @relation(fields: [authorId], references: [id])
+  authorId    String
+  platform    Platform
+  screenshots Screenshot[]
+}
+
+model Screenshot {
+  id    Int            @id @default(autoincrement())
+  url   String
+  size  ScreenshotSize
+  app   App            @relation(fields: [appId], references: [id])
+  appId Int
+}
+
+enum Platform {
+  ANDROID
+  IOS
+  WEB
+}
+
+enum ScreenshotSize {
+  NARROW
+  WIDE
+}
